@@ -1,0 +1,1496 @@
+/* =====================================================
+   Live App Landing Page
+   style.css
+===================================================== */
+
+/* =====================
+   基础设置
+===================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:
+    "Noto Sans JP",
+    Arial,
+    sans-serif;
+
+    background:#12051f;
+
+    color:#fff;
+
+    overflow-x:hidden;
+
+    line-height:1.6;
+
+}
+
+
+
+/* =====================
+   HERO
+===================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+
+    radial-gradient(
+    circle at top,
+    rgba(255,120,200,.35),
+    transparent 35%
+    ),
+
+    linear-gradient(
+    135deg,
+    #10051d 0%,
+    #2b0d39 40%,
+    #4f1956 75%,
+    #861f61 100%
+    );
+
+}
+
+
+
+/* 左上光 */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:520px;
+
+    height:520px;
+
+    left:-180px;
+
+    top:-180px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+    circle,
+    rgba(255,80,180,.35),
+    transparent 70%
+    );
+
+    filter:blur(45px);
+
+}
+
+
+
+/* 右下光 */
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:460px;
+
+    height:460px;
+
+    right:-180px;
+
+    bottom:-150px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+    circle,
+    rgba(120,70,255,.35),
+    transparent 70%
+    );
+
+    filter:blur(55px);
+
+}
+
+
+
+/* 中间微光 */
+
+.hero .container::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:40%;
+
+    transform:translate(-50%,-50%);
+
+    width:650px;
+
+    height:650px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+    circle,
+    rgba(255,255,255,.03),
+    transparent 70%
+    );
+
+    z-index:-1;
+
+}
+
+
+
+/* 内容 */
+
+.container{
+
+    position:relative;
+
+    z-index:10;
+
+    max-width:1000px;
+
+    width:100%;
+
+}
+
+
+
+/* =====================
+   LOGO
+===================== */
+
+.logo{
+
+    font-size:44px;
+
+    font-weight:700;
+
+    letter-spacing:6px;
+
+    color:#fff;
+
+    margin-bottom:22px;
+
+    text-shadow:
+
+    0 0 12px #ff6ec7,
+
+    0 0 25px rgba(255,90,180,.8);
+
+}
+
+
+
+/* =====================
+   标签
+===================== */
+
+.app-tags{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-bottom:35px;
+
+}
+
+.app-tags span{
+
+    padding:9px 22px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(15px);
+
+    color:#fff;
+
+    font-size:14px;
+
+    transition:.3s;
+
+}
+
+.app-tags span:hover{
+
+    background:rgba(255,255,255,.16);
+
+    transform:translateY(-2px);
+
+}
+/* =====================
+   图片横向滚动
+===================== */
+
+.image-slider{
+
+    width:100%;
+
+    overflow:hidden;
+
+    margin:45px auto;
+
+    position:relative;
+
+}
+
+/* 左右渐隐效果 */
+
+.image-slider::before,
+.image-slider::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    width:80px;
+
+    height:100%;
+
+    z-index:5;
+
+    pointer-events:none;
+
+}
+
+.image-slider::before{
+
+    left:0;
+
+    background:linear-gradient(
+        to right,
+        #1a0827,
+        rgba(26,8,39,0)
+    );
+
+}
+
+.image-slider::after{
+
+    right:0;
+
+    background:linear-gradient(
+        to left,
+        #1a0827,
+        rgba(26,8,39,0)
+    );
+
+}
+
+.image-track{
+
+    display:flex;
+
+    gap:22px;
+
+    width:max-content;
+
+    animation:imageMove 26s linear infinite;
+
+}
+
+.image-track:hover{
+
+    animation-play-state:paused;
+
+}
+
+.image-track img{
+
+    width:170px;
+
+    height:235px;
+
+    object-fit:cover;
+
+    flex-shrink:0;
+
+    border-radius:22px;
+
+    border:2px solid rgba(255,255,255,.15);
+
+    box-shadow:
+
+        0 20px 45px rgba(0,0,0,.45),
+
+        0 0 15px rgba(255,120,200,.18);
+
+    transition:.35s;
+
+}
+
+.image-track img:hover{
+
+    transform:
+
+        translateY(-8px)
+
+        scale(1.04);
+
+    border-color:
+
+        rgba(255,170,220,.55);
+
+    box-shadow:
+
+        0 25px 55px rgba(255,70,180,.28);
+
+}
+
+/* 无限滚动 */
+
+@keyframes imageMove{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-50%);
+
+    }
+
+}
+
+/* =====================
+   标题
+===================== */
+
+.container h1{
+
+    font-size:52px;
+
+    line-height:1.35;
+
+    margin-top:15px;
+
+    margin-bottom:22px;
+
+    font-weight:700;
+
+    color:#fff;
+
+    text-shadow:
+
+        0 0 15px rgba(255,120,200,.6),
+
+        0 0 40px rgba(255,60,170,.25);
+
+}
+
+.container p{
+
+    font-size:19px;
+
+    color:#f4ddea;
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+
+}
+/* =====================
+   视频展示区域
+===================== */
+
+.video-showcase{
+
+    position:relative;
+
+    padding:90px 20px;
+
+    overflow:hidden;
+
+    background:
+
+    linear-gradient(
+        180deg,
+        #2b103b 0%,
+        #210b31 45%,
+        #180624 100%
+    );
+
+}
+
+/* 背景光效 */
+
+.video-showcase::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+
+    height:450px;
+
+    left:-180px;
+
+    top:-150px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+        circle,
+        rgba(255,80,180,.18),
+        transparent 70%
+    );
+
+    filter:blur(55px);
+
+}
+
+.video-showcase::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    right:-150px;
+
+    bottom:-180px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+        circle,
+        rgba(120,80,255,.18),
+        transparent 70%
+    );
+
+    filter:blur(60px);
+
+}
+
+.video-title{
+
+    position:relative;
+
+    z-index:5;
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+.video-title h2{
+
+    font-size:34px;
+
+    color:#fff;
+
+    margin-bottom:15px;
+
+    text-shadow:
+        0 0 20px rgba(255,120,200,.55);
+
+}
+
+.video-title p{
+
+    color:#ddd;
+
+    font-size:16px;
+
+}
+
+.video-container{
+
+    position:relative;
+
+    z-index:5;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.video-container video{
+
+    width:31%;
+
+    min-width:260px;
+
+    max-width:330px;
+
+    aspect-ratio:9/16;
+
+    object-fit:cover;
+
+    background:transparent;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+        0 25px 60px rgba(0,0,0,.45),
+
+        0 0 25px rgba(255,120,200,.15);
+
+    transition:.35s;
+
+}
+
+.video-container video:hover{
+
+    transform:
+
+        translateY(-10px)
+
+        scale(1.03);
+
+    box-shadow:
+
+        0 30px 65px rgba(255,60,180,.35);
+
+}
+
+.video-container video::-webkit-media-controls{
+
+    opacity:.92;
+
+}
+/* =====================
+   下载按钮
+===================== */
+
+.download-btn{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:18px 70px;
+
+    border-radius:999px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    background:
+    linear-gradient(
+        45deg,
+        #ff2f87,
+        #ff6cb7,
+        #ff9bc8
+    );
+
+    box-shadow:
+        0 15px 40px rgba(255,50,150,.45),
+        0 0 30px rgba(255,120,200,.18);
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.download-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-120%;
+
+    top:0;
+
+    width:80%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+    );
+
+    transition:.6s;
+
+}
+
+.download-btn:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.02);
+
+    box-shadow:
+        0 20px 50px rgba(255,50,150,.65),
+        0 0 35px rgba(255,120,200,.28);
+
+}
+
+.download-btn:hover::before{
+
+    left:130%;
+
+}
+
+.notice{
+
+    margin-top:18px;
+
+    color:#eecbe0;
+
+    font-size:14px;
+
+}
+
+
+
+/* =====================
+   第二屏
+===================== */
+
+.features{
+
+    padding:90px 20px;
+
+    background:
+
+    linear-gradient(
+        180deg,
+        #190826,
+        #2b103b,
+        #351145
+    );
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.features::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    right:-120px;
+
+    top:-120px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+        circle,
+        rgba(255,120,200,.12),
+        transparent 70%
+    );
+
+    filter:blur(45px);
+
+}
+
+.features h2{
+
+    text-align:center;
+
+    font-size:34px;
+
+    margin-bottom:45px;
+
+    color:#fff;
+
+    text-shadow:
+
+    0 0 15px rgba(255,120,200,.45);
+
+}
+
+
+
+/* 卡片 */
+
+.feature-box{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:28px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.feature-box div{
+
+    width:290px;
+
+    padding:35px;
+
+    border-radius:24px;
+
+    background:
+
+    rgba(255,255,255,.08);
+
+    border:
+
+    1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 18px 40px rgba(0,0,0,.28);
+
+}
+
+.feature-box div:hover{
+
+    transform:
+
+    translateY(-8px);
+
+    border-color:
+
+    rgba(255,120,200,.45);
+
+    box-shadow:
+
+    0 22px 50px rgba(255,70,180,.18);
+
+}
+
+.feature-box h3{
+
+    font-size:24px;
+
+    color:#ff7eb8;
+
+    margin-bottom:18px;
+
+}
+
+.feature-box p{
+
+    color:#eee;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+/* =====================
+   下载区域
+===================== */
+
+.download-area{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:90px 20px;
+
+    text-align:center;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #13061f,
+        #3b1248,
+        #5a1652
+    );
+
+}
+
+.download-area::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-180px;
+
+    bottom:-180px;
+
+    width:450px;
+
+    height:450px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+        circle,
+        rgba(255,120,200,.15),
+        transparent 70%
+    );
+
+    filter:blur(60px);
+
+}
+
+.download-area h2{
+
+    position:relative;
+
+    z-index:2;
+
+    font-size:38px;
+
+    margin-bottom:18px;
+
+    color:#fff;
+
+    text-shadow:
+
+    0 0 18px rgba(255,120,200,.45);
+
+}
+
+.download-area>p:first-of-type{
+
+    position:relative;
+
+    z-index:2;
+
+    font-size:18px;
+
+    color:#f3dceb;
+
+    margin-bottom:35px;
+
+}
+
+.download-area .download-btn{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.download-area p{
+
+    position:relative;
+
+    z-index:2;
+
+    color:#ddd;
+
+    margin-top:18px;
+
+    font-size:14px;
+
+    letter-spacing:.5px;
+
+}
+
+
+
+/* =====================
+   Footer
+===================== */
+
+footer{
+
+    background:#09020f;
+
+    padding:28px 20px;
+
+    text-align:center;
+
+    border-top:
+
+    1px solid rgba(255,255,255,.08);
+
+}
+
+footer p{
+
+    color:#999;
+
+    font-size:13px;
+
+    letter-spacing:1px;
+
+}
+
+
+
+/* =====================
+   滚动条
+===================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#12051f;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff4fa5;
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#ff78c6;
+
+}
+
+
+
+/* =====================
+   手机适配
+===================== */
+
+@media(max-width:900px){
+
+.image-track img{
+
+    width:145px;
+
+    height:205px;
+
+}
+
+.video-container{
+
+    gap:16px;
+
+}
+
+.video-container video{
+
+    width:45%;
+
+}
+
+.container h1{
+
+    font-size:40px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+
+    min-height:auto;
+
+    padding:70px 18px;
+
+}
+
+.logo{
+
+    font-size:36px;
+
+}
+
+.container h1{
+
+    font-size:32px;
+
+    line-height:1.4;
+
+}
+
+.container p{
+
+    font-size:16px;
+
+}
+
+.download-btn{
+
+    width:100%;
+
+    max-width:330px;
+
+}
+
+.feature-box{
+
+    gap:18px;
+
+}
+
+.feature-box div{
+
+    width:100%;
+
+}
+
+.video-container{
+
+    flex-direction:column;
+
+}
+
+.video-container video{
+
+    width:100%;
+
+    max-width:360px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.app-tags{
+
+    gap:8px;
+
+}
+
+.app-tags span{
+
+    font-size:12px;
+
+    padding:7px 14px;
+
+}
+
+.image-track img{
+
+    width:120px;
+
+    height:170px;
+
+}
+
+.logo{
+
+    font-size:30px;
+
+}
+
+.container h1{
+
+    font-size:28px;
+
+}
+
+.download-area h2{
+
+    font-size:28px;
+
+}
+
+.features h2{
+
+    font-size:28px;
+
+}
+
+}
+/* =====================
+   视频展示区域
+===================== */
+
+.video-section{
+
+    position:relative;
+
+    padding:70px 20px;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    background:
+
+    linear-gradient(
+        180deg,
+        #2b0d37,
+        #190826
+    );
+
+}
+
+.video-section h2{
+
+    font-size:34px;
+
+    margin-bottom:35px;
+
+    color:#fff;
+
+    text-shadow:
+
+    0 0 20px rgba(255,120,200,.5);
+
+}
+
+.video-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:24px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.video-container video{
+
+    width:260px;
+
+    border-radius:18px;
+
+    object-fit:cover;
+
+    background:#000;
+
+    box-shadow:
+
+    0 18px 45px rgba(0,0,0,.45);
+
+    transition:.35s;
+
+}
+
+.video-container video:hover{
+
+    transform:
+
+    translateY(-8px)
+
+    scale(1.03);
+
+}
+
+
+
+/* =====================
+   飘落樱花
+===================== */
+
+body::before{
+
+    content:"🌸";
+
+    position:fixed;
+
+    left:8%;
+
+    top:-50px;
+
+    font-size:28px;
+
+    opacity:.45;
+
+    animation:sakura1 14s linear infinite;
+
+    pointer-events:none;
+
+    z-index:1;
+
+}
+
+body::after{
+
+    content:"🌸";
+
+    position:fixed;
+
+    right:12%;
+
+    top:-100px;
+
+    font-size:22px;
+
+    opacity:.35;
+
+    animation:sakura2 18s linear infinite;
+
+    pointer-events:none;
+
+    z-index:1;
+
+}
+
+@keyframes sakura1{
+
+0%{
+
+transform:
+
+translateY(-60px)
+
+rotate(0deg);
+
+}
+
+100%{
+
+transform:
+
+translateY(110vh)
+
+rotate(360deg);
+
+}
+
+}
+
+@keyframes sakura2{
+
+0%{
+
+transform:
+
+translateY(-100px)
+
+rotate(0deg);
+
+}
+
+100%{
+
+transform:
+
+translateY(110vh)
+
+rotate(-360deg);
+
+}
+
+}
+
+
+
+/* =====================
+   卡片呼吸动画
+===================== */
+
+.feature-box div{
+
+    animation:cardFloat 4s ease-in-out infinite;
+
+}
+
+.feature-box div:nth-child(2){
+
+    animation-delay:.5s;
+
+}
+
+.feature-box div:nth-child(3){
+
+    animation-delay:1s;
+
+}
+
+@keyframes cardFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+/* =====================
+   图片轻微缩放
+===================== */
+
+.image-track img{
+
+    transition:
+
+    transform .4s,
+
+    box-shadow .4s;
+
+}
+
+.image-track img:hover{
+
+    transform:
+
+    scale(1.08);
+
+    box-shadow:
+
+    0 20px 50px rgba(255,120,200,.35);
+
+}
+
+
+
+/* =====================
+   按钮呼吸光效
+===================== */
+
+.download-btn{
+
+    animation:buttonGlow 2.5s ease-in-out infinite;
+
+}
+
+@keyframes buttonGlow{
+
+0%{
+
+box-shadow:
+
+0 0 10px rgba(255,80,170,.3);
+
+}
+
+50%{
+
+box-shadow:
+
+0 0 35px rgba(255,80,170,.8);
+
+}
+
+100%{
+
+box-shadow:
+
+0 0 10px rgba(255,80,170,.3);
+
+}
+
+}
