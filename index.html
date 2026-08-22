@@ -27,8 +27,39 @@
 
 <section class="hero">
 
+    <!-- =========================
+         背景循环视频
+    ========================== -->
+
+    <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto">
+
+        <source
+            src="images/hero.mp4"
+            type="video/mp4">
+
+    </video>
+
+
+    <!-- =========================
+         视频遮罩
+    ========================== -->
+
+    <div class="hero-overlay"></div>
+
+
+    <!-- =========================
+         装饰光效
+    ========================== -->
+
     <div class="hero-glow glow-left"></div>
     <div class="hero-glow glow-right"></div>
+
 
     <div class="container">
 
@@ -74,16 +105,22 @@
         </div>
 
 
-        <!-- 主播图片 -->
+        <!-- =========================
+             主播图片无限滚动
+        ========================== -->
 
         <div class="image-slider">
 
             <div class="image-track">
 
+
+                <!-- 第一组 -->
+
                 <div class="live-card">
 
-                    <img src="images/app.png"
-                         alt="Perfil en directo">
+                    <img
+                        src="images/mn1.jpg"
+                        alt="Perfil en directo">
 
                     <div class="live-badge">
                         ● EN DIRECTO
@@ -98,8 +135,9 @@
 
                 <div class="live-card">
 
-                    <img src="images/live.jpg"
-                         alt="Transmisión en vivo">
+                    <img
+                        src="images/mn2.jpg"
+                        alt="Transmisión en vivo">
 
                     <div class="live-badge">
                         ● EN DIRECTO
@@ -114,8 +152,9 @@
 
                 <div class="live-card">
 
-                    <img src="images/chat.jpg"
-                         alt="Chat en vivo">
+                    <img
+                        src="images/mn3.jpg"
+                        alt="Chat en vivo">
 
                     <div class="live-badge">
                         ● EN DIRECTO
@@ -130,8 +169,9 @@
 
                 <div class="live-card">
 
-                    <img src="images/live1.png"
-                         alt="Transmisión en vivo">
+                    <img
+                        src="images/mn4.jpg"
+                        alt="Transmisión en vivo">
 
                     <div class="live-badge">
                         ● EN DIRECTO
@@ -146,8 +186,9 @@
 
                 <div class="live-card">
 
-                    <img src="images/live2.png"
-                         alt="Transmisión en vivo">
+                    <img
+                        src="images/mn5.jpg"
+                        alt="Transmisión en vivo">
 
                     <div class="live-badge">
                         ● EN DIRECTO
@@ -160,44 +201,16 @@
                 </div>
 
 
-                <!-- 第二组，用于无限滚动 -->
+                <!-- =========================
+                     第二组
+                     用于无限循环
+                ========================== -->
 
                 <div class="live-card">
 
-                    <img src="images/app.png"
-                         alt="Perfil en directo">
-
-                    <div class="live-badge">
-                        ● EN DIRECTO
-                    </div>
-
-                    <div class="viewer-count">
-                        ♡ En vivo
-                    </div>
-
-                </div>
-
-
-                <div class="live-card">
-
-                    <img src="images/live.jpg"
-                         alt="Transmisión en vivo">
-
-                    <div class="live-badge">
-                        ● EN DIRECTO
-                    </div>
-
-                    <div class="viewer-count">
-                        ♡ En vivo
-                    </div>
-
-                </div>
-
-
-                <div class="live-card">
-
-                    <img src="images/chat.jpg"
-                         alt="Chat en vivo">
+                    <img
+                        src="images/mn1.jpg"
+                        alt="Perfil en directo">
 
                     <div class="live-badge">
                         ● EN DIRECTO
@@ -212,8 +225,9 @@
 
                 <div class="live-card">
 
-                    <img src="images/live1.png"
-                         alt="Transmisión en vivo">
+                    <img
+                        src="images/mn2.jpg"
+                        alt="Transmisión en vivo">
 
                     <div class="live-badge">
                         ● EN DIRECTO
@@ -228,8 +242,43 @@
 
                 <div class="live-card">
 
-                    <img src="images/live2.png"
-                         alt="Transmisión en vivo">
+                    <img
+                        src="images/mn3.jpg"
+                        alt="Chat en vivo">
+
+                    <div class="live-badge">
+                        ● EN DIRECTO
+                    </div>
+
+                    <div class="viewer-count">
+                        ♡ En vivo
+                    </div>
+
+                </div>
+
+
+                <div class="live-card">
+
+                    <img
+                        src="images/mn4.jpg"
+                        alt="Transmisión en vivo">
+
+                    <div class="live-badge">
+                        ● EN DIRECTO
+                    </div>
+
+                    <div class="viewer-count">
+                        ♡ En vivo
+                    </div>
+
+                </div>
+
+
+                <div class="live-card">
+
+                    <img
+                        src="images/mn5.jpg"
+                        alt="Transmisión en vivo">
 
                     <div class="live-badge">
                         ● EN DIRECTO
@@ -246,7 +295,9 @@
         </div>
 
 
-        <!-- CTA -->
+        <!-- =========================
+             CTA
+        ========================== -->
 
         <div class="hero-action">
 
@@ -587,6 +638,7 @@
     </p>
 
 </footer>
+
 
 </body>
 
