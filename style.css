@@ -1,6 +1,6 @@
 /* =====================================================
    LIVE APP
-   Spanish Live Streaming Landing Page
+   Japanese Live Streaming Landing Page
 ===================================================== */
 
 
@@ -22,6 +22,10 @@ body{
 
     font-family:
     "Inter",
+    "Noto Sans JP",
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    "Meiryo",
     "Segoe UI",
     Arial,
     sans-serif;
@@ -246,7 +250,7 @@ a{
 
 
 /* =========================
-   背景光
+   BACKGROUND GLOW
 ========================= */
 
 .hero-glow{
@@ -980,7 +984,6 @@ a{
 /* =========================
    VIDEO CARDS
    PC / TABLET
-   三个视频横向并排
 ========================= */
 
 .video-container{
@@ -1501,11 +1504,6 @@ footer .footer-note{
     }
 
 
-    /* =========================
-       TABLET VIDEO
-       三个视频强制并排
-    ========================= */
-
     .video-container{
 
         display:grid;
@@ -1558,9 +1556,7 @@ footer .footer-note{
     }
 
 
-    /* =========================
-       手机视频背景
-    ========================= */
+    /* MOBILE VIDEO BACKGROUND */
 
     .hero-video{
 
@@ -1569,9 +1565,7 @@ footer .footer-note{
     }
 
 
-    /* =========================
-       手机遮罩加强
-    ========================= */
+    /* MOBILE OVERLAY */
 
     .hero-overlay{
 
@@ -1762,7 +1756,7 @@ footer .footer-note{
 
     /* =================================================
        MOBILE VIDEO SHOWCASE
-       ★★★ 三个视频永远保持同一行 ★★★
+       THREE VIDEOS STAY ON ONE ROW
     ================================================= */
 
     .video-showcase{
@@ -1977,10 +1971,7 @@ footer .footer-note{
     }
 
 
-    /* =========================
-       VERY SMALL PHONE VIDEO
-       ★★★ 仍然保持三列 ★★★
-    ========================= */
+    /* VERY SMALL PHONE VIDEO */
 
     .video-showcase{
 
@@ -2054,7 +2045,6 @@ footer .footer-note{
 
 /* =========================
    EXTRA SMALL DEVICES
-   防止极小屏幕换行
 ========================= */
 
 @media(max-width:350px){
